@@ -4,9 +4,46 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
     <title>Momentum App</title>
+    <script>
+      function onloginSubmit(event) {
+        const todoForm = document.querySelector("#todoform");
+        todoForm.classList.remove("hidden");
+      }
+      const login_Form = document.getElementById("login-submit");
+      console.log(login_Form);
+      login_Form.addEventListener("submit", onloginSubmit);
+    </script>
   </head>
   <body>
-    <script src="app.js"></script>
+    <div id="clock" style="font-size: 100px; text-align: center; padding-top: 5%"></div>
+    <div id="quote" style="text-align: center">
+      <div style="font-size: 30px"></div>
+      <div style="font-size: 20px"></div>
+    </div>
+    <div style="text-align: center; padding-top: 5%">
+      <form id="login-form" class="hidden">
+        <input required maxlength="15" type="text" placeholder="What is your name?" />
+        <input id="login-submit" type="submit" value="Log In" style="width: 80px" />
+      </form>
+    </div>
+    <div id="greeting" class="hidden" style="font-size: 40px; text-align: center; padding-top: 3%"></div>
+    <div id="todoform" class="hidden">
+      <form id="todo-form">
+        <input type="text" placeholder="Write a To Do and Press Enter" required />
+      </form>
+    </div>
+    <ul id="todo-list"></ul>
+    <div id="weather">
+      <span></span>
+      <span></span>
+    </div>
+    <script src="js/greeting.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/todo.js"></script>
+    <script src="js/weather.js"></script>
   </body>
 </html>
