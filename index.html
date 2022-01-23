@@ -6,15 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/style.css" />
     <title>Momentum App</title>
-    <script>
-      function onloginSubmit(event) {
-        const todoForm = document.querySelector("#todoform");
-        todoForm.classList.remove("hidden");
-      }
-      const login_Form = document.getElementById("login-submit");
-      console.log(login_Form);
-      login_Form.addEventListener("submit", onloginSubmit);
-    </script>
   </head>
   <body>
     <div id="clock" style="font-size: 100px; text-align: center; padding-top: 5%"></div>
@@ -28,14 +19,14 @@
         <input id="login-submit" type="submit" value="Log In" style="width: 80px" />
       </form>
     </div>
-    <div id="greeting" class="hidden" style="font-size: 40px; text-align: center; padding-top: 3%"></div>
-    <div id="todoform" class="hidden">
+    <div id="greeting" class="hidden" style="font-size: 40px; text-align: center"></div>
+    <div style="position: absolute; right: 0; padding-right: 3%">
       <form id="todo-form">
         <input type="text" placeholder="Write a To Do and Press Enter" required />
       </form>
     </div>
-    <ul id="todo-list"></ul>
-    <div id="weather">
+    <ul id="todo-list" style="position: absolute; right: 0; padding-right: 15%; padding-top: 3%"></ul>
+    <div id="weather" style="position: absolute; bottom: 0">
       <span></span>
       <span></span>
     </div>

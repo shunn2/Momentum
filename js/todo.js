@@ -1,6 +1,7 @@
 const toDoForm = document.getElementById("todo-form");
 const toDoInput = toDoForm.querySelector("#todo-form input");
 const toDoList = document.getElementById("todo-list");
+const savedUser = localStorage.getItem("username");
 
 const TODOS_KEY = "todos";
 
@@ -32,15 +33,19 @@ function paintToDo(newToDo) {
 
 function handleToDoSubmit(event) {
   event.preventDefault();
-  const newToDo = toDoInput.value;
-  toDoInput.value = "";
-  const newToDoObj = {
-    text: newToDo,
-    id: Date.now(),
-  };
-  toDos.push(newToDoObj);
-  paintToDo(newToDoObj);
-  saveToDos();
+  if (savedUser !== null) {
+    const newToDo = toDoInput.value;
+    toDoInput.value = "";
+    const newToDoObj = {
+      text: newToDo,
+      id: Date.now(),
+    };
+    toDos.push(newToDoObj);
+    paintToDo(newToDoObj);
+    saveToDos();
+  } else {
+    alert("Please Log In First!");
+  }
 }
 toDoForm.addEventListener("submit", handleToDoSubmit);
 
